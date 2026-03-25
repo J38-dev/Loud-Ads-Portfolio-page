@@ -1203,36 +1203,54 @@ height:45px;
   }
 }
 
-  .case-images{
-  display:grid;
-  grid-template-columns: 1fr 260px;
-  gap:40px;
-  align-items:center;
-  justify-content:center;
+  .case-images {
+  display: grid;
+  grid-template-columns: 1fr 260px; /* desktops stack + phone side */
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
 }
 
-/* LEFT SIDE (2 LANDSCAPE IMAGES STACKED) */
-.desktop-stack{
-  display:flex;
-  flex-direction:column;
-  gap:25px;
+/* Desktop stack (two images) */
+.desktop-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.desktop-stack img{
-  width:100%;
-  max-width:700px;
-  border-radius:18px;
-  object-fit:cover;
+.desktop-stack img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 18px;      /* rounded corners like your screenshot */
+  object-fit: cover;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12); /* soft shadow for 3D effect */
 }
 
-/* RIGHT SIDE (PHONE IMAGE) */
-.case-images > img{
-  width:100%;
-  max-width:260px;
-  border-radius:30px;
+/* Phone image */
+.case-images > img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 30px;       /* more rounded like a phone */
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
 }
 
+/* Responsive for smaller screens */
+@media(max-width:1000px){
+  .case-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
+  .desktop-stack img {
+    max-width: 100%;
+  }
+
+  .case-images > img {
+    max-width: 220px;
+  }
+}
 
 /* ================= BUTTON ================= */
 
